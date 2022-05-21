@@ -128,7 +128,7 @@ public class DrawLine : MonoBehaviour
             Color color = JointVelocity.GetSpeedColor(speed);
             if (prevColor == color) return;
 
-            Debug.Log($"{Time.time} Color change from {prevColor } to {color}");
+            //Debug.Log($"{Time.time} Color change from {prevColor } to {color}");
             
 
             if (firstColor)

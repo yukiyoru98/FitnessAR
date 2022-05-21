@@ -62,22 +62,6 @@ public class JointVelocity : MonoBehaviour
     {
         
         return Color.HSVToRGB(GetSpeedColorHue(speed), 1, 1);
-        //    if (speed < 0.2f)
-        //    {
-        //        return Color.cyan;
-        //    }
-        //    else if (speed < 0.6f)
-        //    {
-        //        return Color.green;
-        //    }
-        //    else if (speed < 1.2f)
-        //    {
-        //        return Color.yellow;
-        //    }
-        //    else
-        //    {
-        //        return Color.red;
-        //    }
     }
 
     public static float GetSpeedColorHue(float speed)

@@ -9,7 +9,6 @@ public class ColorAvatar : MonoBehaviour
     [SerializeField]
     private Renderer userRenderer;
 
-    private Color prevColor = Color.cyan;
     private bool isChangingColor = false;
     [SerializeField, Range(0.1f, 1f)]
     private float lerpDuration = 0.1f;
@@ -24,22 +23,6 @@ public class ColorAvatar : MonoBehaviour
         }
     }
 
-
-    //void ChangeRendererColor(float speed)
-    //{
-    //    if (userRenderer)
-    //    {
-    //        Color nextColor = JointVelocity.GetSpeedColor(speed);
-    //        if(prevColor != nextColor)
-    //        {
-    //            if (isChangingColor)
-    //            {
-    //                prevColor = userRenderer.material.color;
-    //            }
-    //            StartCoroutine(LerpColor(nextColor));
-    //        }
-    //    }
-    //}
     void ChangeRendererColor(float speed)
     {
         if (userRenderer)
@@ -69,18 +52,6 @@ public class ColorAvatar : MonoBehaviour
         }
         isChangingColor = false;
         userRenderer.material.color = Color.HSVToRGB(nextColor, 1, 1);
-        Debug.Log(nextColor);
     }
 
-    IEnumerator LerpColor(Color nextColor)
-    {
-        float timeElapsed = 0f;
-        while(timeElapsed < lerpDuration)
-        {
-            userRenderer.material.color = Color.Lerp(prevColor, nextColor, timeElapsed / lerpDuration);
-            timeElapsed += Time.deltaTime;
-            yield return null;
-        }
-        userRenderer.material.color = nextColor;
-    }
 }
